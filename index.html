@@ -21,14 +21,8 @@ max-height: 124px;
 <script>
 
 function showForm() {
-document.body.innerHTML= `
+document.getElementById("theForm").innerHTML= `
 <div class="row text-center">
-    <img class="logo" src="mpsp_logo_latest_128.webp" />
-</div>
-  <div class="row text-center" style="color:#f5a583" >
-    <h1>Maharashtra Pradnya Shodh Pariksha</h1><hr />
-  </div>
-  <div class="row text-center">
     <h5>Please provide matching registration details to check results.</h5>
 </div>
 
@@ -77,7 +71,7 @@ if(!res) {
     resContent += `No such record.<hr/>
 <button name="back" type="cancel" class="btn btn-primary" onclick="showForm()">Back</button>
 `;
-document.body.innerHTML = resContent;
+document.getElementById("theForm").innerHTML = resContent;
     return;
 }
 
@@ -140,7 +134,7 @@ resContent += `<hr/>
 <button name="back" type="cancel" class="btn btn-primary" onclick="showForm()">Back</button>
 `;
 
-document.body.innerHTML = resContent;
+document.getElementById("theForm").innerHTML = resContent;
 }
 
     </script>
@@ -153,13 +147,13 @@ document.body.innerHTML = resContent;
 <div class="row text-center">
     <img class="logo" src="mpsp_logo_latest_128.webp" />
 </div>
-  <div class="row text-center" style="color:#f5a583" >
+<div class="row text-center" style="color:#f5a583" >
     <h1>Maharashtra Pradnya Shodh Pariksha</h1><hr />
-  </div>
-  <div class="row text-center">
+</div>
+<div id="theForm">
+<div class="row text-center">
     <h5>Please provide matching registration details to check results.</h5>
 </div>
-
 <form name="enr" style="padding:8px;" action="./" method="post" >
   <div class="form-group row">
     <label for="code" class="col-4 col-form-label">Hall Ticket Number</label> 
@@ -181,5 +175,6 @@ document.body.innerHTML = resContent;
     </div>
   </div>
 </form>
+</div>
 </body>
 </html>
